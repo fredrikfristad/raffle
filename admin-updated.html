@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -17,58 +18,58 @@ body { background: var(--bg); font-family:'DM Sans',sans-serif; min-height:100vh
 
 /* ── LOGIN ── */
 .login-wrap  { display:flex; align-items:center; justify-content:center; min-height:100vh; padding:20px; }
-.login-card  { background:var(--cream); border-radius:16px; max-width:360px; width:100%; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.5); }
-.login-top   { background:var(--blue); padding:28px 24px 22px; text-align:center; }
-.login-top h1{ font-family:'Playfair Display',serif; font-size:32px; font-weight:900; color:var(--cream); }
+.login-card  { background:var(–cream); border-radius:16px; max-width:360px; width:100%; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.5); }
+.login-top   { background:var(–blue); padding:28px 24px 22px; text-align:center; }
+.login-top h1{ font-family:‘Playfair Display’,serif; font-size:32px; font-weight:900; color:var(–cream); }
 .login-top p { font-size:13px; color:rgba(245,240,232,.7); margin-top:2px; }
 .login-body  { padding:24px; }
-.lbl { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:6px; display:block; }
-.inp { width:100%; border:1.5px solid var(--cream-d); background:#f0ece4; font-family:'DM Sans',sans-serif; font-size:17px; font-weight:600; padding:11px 14px; border-radius:10px; color:var(--black); outline:none; margin-bottom:14px; transition:border-color .15s; }
-.inp:focus  { border-color:var(--blue); }
+.lbl { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(–muted); margin-bottom:6px; display:block; }
+.inp { width:100%; border:1.5px solid var(–cream-d); background:#f0ece4; font-family:‘DM Sans’,sans-serif; font-size:17px; font-weight:600; padding:11px 14px; border-radius:10px; color:var(–black); outline:none; margin-bottom:14px; transition:border-color .15s; }
+.inp:focus  { border-color:var(–blue); }
 .inp.err    { border-color:#e53935; }
-.login-btn  { width:100%; background:var(--blue); color:white; border:none; font-family:'Playfair Display',serif; font-size:18px; font-weight:700; padding:13px; border-radius:10px; cursor:pointer; }
-.login-btn:hover { background:var(--blue-d); }
+.login-btn  { width:100%; background:var(–blue); color:white; border:none; font-family:‘Playfair Display’,serif; font-size:18px; font-weight:700; padding:13px; border-radius:10px; cursor:pointer; }
+.login-btn:hover { background:var(–blue-d); }
 .login-err  { color:#e53935; font-size:13px; font-weight:700; text-align:center; margin-top:10px; display:none; }
 
 /* ── DASHBOARD ── */
 .dashboard { display:none; }
 
 /* ── HEADER ── */
-.header { background:var(--cream); border-bottom:2px solid var(--blue); padding:14px 20px; position:sticky; top:0; z-index:50; }
+.header { background:var(–cream); border-bottom:2px solid var(–blue); padding:14px 20px; position:sticky; top:0; z-index:50; }
 .header-inner { max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; }
-.logo { font-family:'Playfair Display',serif; font-size:clamp(18px,4vw,24px); font-weight:900; color:var(--blue); }
-.logo span { font-size:.55em; font-weight:600; color:var(--muted); font-family:'DM Sans',sans-serif; letter-spacing:1px; text-transform:uppercase; margin-left:6px; }
+.logo { font-family:‘Playfair Display’,serif; font-size:clamp(18px,4vw,24px); font-weight:900; color:var(–blue); }
+.logo span { font-size:.55em; font-weight:600; color:var(–muted); font-family:‘DM Sans’,sans-serif; letter-spacing:1px; text-transform:uppercase; margin-left:6px; }
 .hdr-actions { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
-.refresh-btn { background:var(--blue); color:white; border:none; font-size:13px; font-weight:700; letter-spacing:1px; padding:8px 16px; border-radius:8px; cursor:pointer; }
-.refresh-btn:hover { background:var(--blue-d); }
-.logout-btn  { background:none; border:1.5px solid var(--cream-d); color:var(--muted); font-size:13px; font-weight:600; padding:6px 14px; border-radius:8px; cursor:pointer; }
-.logout-btn:hover { border-color:var(--blue); color:var(--blue); }
-.ts { font-size:12px; font-weight:600; color:var(--muted); }
+.refresh-btn { background:var(–blue); color:white; border:none; font-size:13px; font-weight:700; letter-spacing:1px; padding:8px 16px; border-radius:8px; cursor:pointer; }
+.refresh-btn:hover { background:var(–blue-d); }
+.logout-btn  { background:none; border:1.5px solid var(–cream-d); color:var(–muted); font-size:13px; font-weight:600; padding:6px 14px; border-radius:8px; cursor:pointer; }
+.logout-btn:hover { border-color:var(–blue); color:var(–blue); }
+.ts { font-size:12px; font-weight:600; color:var(–muted); }
 
 /* ── TABS ── */
-.tabs { background:var(--card); border-bottom:1px solid rgba(255,255,255,.06); overflow-x:auto; }
+.tabs { background:var(–card); border-bottom:1px solid rgba(255,255,255,.06); overflow-x:auto; }
 .tabs-inner { max-width:1100px; margin:0 auto; display:flex; padding:0 16px; }
-.tab-btn { background:none; border:none; color:rgba(245,240,232,.35); font-family:'DM Sans',sans-serif; font-size:14px; font-weight:700; padding:14px 18px 12px; cursor:pointer; border-bottom:3px solid transparent; white-space:nowrap; transition:all .15s; }
-.tab-btn.active { color:var(--cream); border-bottom-color:var(--blue); }
+.tab-btn { background:none; border:none; color:rgba(245,240,232,.35); font-family:‘DM Sans’,sans-serif; font-size:14px; font-weight:700; padding:14px 18px 12px; cursor:pointer; border-bottom:3px solid transparent; white-space:nowrap; transition:all .15s; }
+.tab-btn.active { color:var(–cream); border-bottom-color:var(–blue); }
 
 .main { max-width:1100px; margin:0 auto; padding:24px 16px 60px; }
 
 /* ── SECTION LABEL ── */
 .sl { font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:rgba(245,240,232,.35); margin-bottom:10px; margin-top:28px; display:flex; align-items:center; gap:10px; }
 .sl:first-child { margin-top:0; }
-.sl::after { content:''; flex:1; height:1px; background:rgba(255,255,255,.07); }
+.sl::after { content:’’; flex:1; height:1px; background:rgba(245,240,232,.07); }
 
 /* ── CARD ── */
-.card { background:var(--card); border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,.06); margin-top:10px; }
+.card { background:var(–card); border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,.06); margin-top:10px; }
 .card-body { padding:20px; }
 
 /* ── STATS ── */
 .stats-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:10px; }
-.stat { background:var(--card); border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,.06); }
-.stat.hl { border-color:var(--blue); }
+.stat { background:var(–card); border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,.06); }
+.stat.hl { border-color:var(–blue); }
 .stat-top { background:rgba(255,255,255,.04); font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(245,240,232,.35); padding:7px 14px; }
-.stat.hl .stat-top { background:var(--blue); color:var(--cream); }
-.stat-num { font-family:'Playfair Display',serif; font-size:clamp(24px,4vw,32px); font-weight:900; color:var(--cream); padding:10px 14px 12px; }
+.stat.hl .stat-top { background:var(–blue); color:var(–cream); }
+.stat-num { font-family:‘Playfair Display’,serif; font-size:clamp(24px,4vw,32px); font-weight:900; color:var(–cream); padding:10px 14px 12px; }
 .stat-num.green  { color:#66bb6a; }
 .stat-num.orange { color:#ffa726; }
 
@@ -76,62 +77,52 @@ body { background: var(--bg); font-family:'DM Sans',sans-serif; min-height:100vh
 .bar-row { margin-bottom:14px; }
 .bar-row:last-child { margin-bottom:0; }
 .bar-meta { display:flex; justify-content:space-between; margin-bottom:5px; }
-.bar-name  { font-size:14px; font-weight:700; color:var(--cream); }
+.bar-name  { font-size:14px; font-weight:700; color:var(–cream); }
 .bar-count { font-size:13px; font-weight:600; color:rgba(245,240,232,.4); }
 .bar-track { background:rgba(255,255,255,.07); border-radius:3px; height:8px; overflow:hidden; }
-.bar-fill  { background:var(--blue); height:100%; border-radius:3px; transition:width .6s ease; width:0; }
+.bar-fill  { background:var(–blue); height:100%; border-radius:3px; transition:width .6s ease; width:0; }
 
 /* ── PRIZE EDITOR ── */
-.col-hdrs { display:grid; grid-template-columns:80px 1fr 90px 1fr 80px 36px; gap:8px; padding:0 12px; margin-bottom:6px; }
+.col-hdrs { display:grid; grid-template-columns:48px 1fr 90px 1fr 36px; gap:8px; padding:0 12px; margin-bottom:6px; }
 .col-hdr  { font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:rgba(245,240,232,.2); }
-.pe-row   { display:grid; grid-template-columns:80px 1fr 90px 1fr 80px 36px; gap:8px; align-items:center; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.07); border-radius:8px; padding:10px 12px; margin-bottom:8px; }
-.pe-inp   { background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); color:var(--cream); font-family:'DM Sans',sans-serif; font-size:14px; font-weight:600; padding:7px 10px; border-radius:6px; outline:none; width:100%; }
-.pe-inp:focus { border-color:var(--blue); }
+.pe-row   { display:grid; grid-template-columns:48px 1fr 90px 1fr 36px; gap:8px; align-items:center; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.07); border-radius:8px; padding:10px 12px; }
+.pe-inp   { background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); color:var(–cream); font-family:‘DM Sans’,sans-serif; font-size:14px; font-weight:600; padding:7px 10px; border-radius:6px; outline:none; width:100%; }
+.pe-inp:focus { border-color:var(–blue); }
 .pe-emoji { text-align:center; font-size:18px; }
-.pe-img-cell { display:flex; flex-direction:column; align-items:center; gap:4px; }
-.pe-img-preview { width:60px; height:60px; border-radius:6px; object-fit:cover; border:1px solid rgba(255,255,255,.1); }
-.pe-img-placeholder { width:60px; height:60px; border-radius:6px; border:1.5px dashed rgba(255,255,255,.2); display:flex; align-items:center; justify-content:center; font-size:24px; color:rgba(245,240,232,.2); }
-.pe-img-btn { background:rgba(43,78,191,.15); border:1px solid rgba(43,78,191,.3); color:var(--blue-l); font-size:11px; font-weight:700; padding:4px 8px; border-radius:4px; cursor:pointer; white-space:nowrap; }
-.pe-img-btn:hover { background:rgba(43,78,191,.25); }
-.pe-img-btn.remove { background:rgba(198,40,40,.15); border-color:rgba(198,40,40,.3); color:#ef9a9a; }
-.pe-img-btn.remove:hover { background:rgba(198,40,40,.25); }
-.pe-img-input { display:none; }
 .pe-del   { background:rgba(198,40,40,.15); border:1px solid rgba(198,40,40,.2); color:#ef9a9a; font-size:14px; width:34px; height:34px; border-radius:6px; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
 .pe-del:hover { background:rgba(198,40,40,.3); }
-.add-row-btn  { width:100%; background:rgba(43,78,191,.1); border:1.5px dashed rgba(43,78,191,.4); color:var(--blue-l); font-size:14px; font-weight:700; padding:10px; border-radius:8px; cursor:pointer; margin-bottom:14px; }
+.add-row-btn  { width:100%; background:rgba(43,78,191,.1); border:1.5px dashed rgba(43,78,191,.4); color:var(–blue-l); font-size:14px; font-weight:700; padding:10px; border-radius:8px; cursor:pointer; margin-bottom:14px; }
 .add-row-btn:hover { background:rgba(43,78,191,.2); }
 
 /* ── MANUAL ENTRY ── */
 .entry-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-bottom:16px; }
 .ef { display:flex; flex-direction:column; gap:5px; }
 .albl { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(245,240,232,.4); }
-.a-inp { background:rgba(255,255,255,.05); border:1.5px solid rgba(255,255,255,.1); color:var(--cream); font-family:'DM Sans',sans-serif; font-size:16px; font-weight:600; padding:10px 12px; border-radius:8px; outline:none; width:100%; }
-.a-inp:focus { border-color:var(--blue); }
+.a-inp { background:rgba(255,255,255,.05); border:1.5px solid rgba(255,255,255,.1); color:var(–cream); font-family:‘DM Sans’,sans-serif; font-size:16px; font-weight:600; padding:10px 12px; border-radius:8px; outline:none; width:100%; }
+.a-inp:focus { border-color:var(–blue); }
 .a-inp.err { border-color:#e53935; }
 .pay-tog { display:flex; border:1.5px solid rgba(255,255,255,.1); border-radius:8px; overflow:hidden; }
 .pay-btn { flex:1; background:transparent; color:rgba(245,240,232,.5); border:none; font-size:13px; font-weight:700; padding:9px 8px; cursor:pointer; transition:all .15s; border-right:1px solid rgba(255,255,255,.08); }
 .pay-btn:last-child { border-right:none; }
-.pay-btn.active { background:var(--blue); color:white; }
+.pay-btn.active { background:var(–blue); color:white; }
 .pc-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:8px; margin-bottom:14px; }
 .pc-item { display:flex; align-items:center; gap:8px; background:rgba(255,255,255,.04); border:1.5px solid rgba(255,255,255,.08); border-radius:8px; padding:9px 10px; cursor:pointer; user-select:none; transition:all .15s; }
-.pc-item:hover  { border-color:var(--blue); }
-.pc-item.sel    { border-color:var(--blue); background:rgba(43,78,191,.1); }
-.pc-item input  { accent-color:var(--blue); width:15px; height:15px; flex-shrink:0; }
-.pc-img { width:40px; height:40px; border-radius:6px; object-fit:cover; flex-shrink:0; }
-.pc-emoji { font-size:24px; width:40px; text-align:center; flex-shrink:0; }
-.pcn { font-size:14px; font-weight:700; color:var(--cream); flex:1; min-width:0; }
-.pcp { font-size:11px; font-weight:600; color:var(--blue-l); }
-.pqty { width:44px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:6px; color:var(--cream); font-family:'Playfair Display',serif; font-size:15px; font-weight:700; text-align:center; padding:3px; outline:none; margin-left:auto; flex-shrink:0; }
-.entry-total { background:var(--blue); border-radius:8px; padding:12px 16px; display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
+.pc-item:hover  { border-color:var(–blue); }
+.pc-item.sel    { border-color:var(–blue); background:rgba(43,78,191,.1); }
+.pc-item input  { accent-color:var(–blue); width:15px; height:15px; flex-shrink:0; }
+.pcn { font-size:14px; font-weight:700; color:var(–cream); flex:1; }
+.pcp { font-size:11px; font-weight:600; color:var(–blue-l); }
+.pqty { width:44px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:6px; color:var(–cream); font-family:‘Playfair Display’,serif; font-size:15px; font-weight:700; text-align:center; padding:3px; outline:none; margin-left:auto; flex-shrink:0; }
+.entry-total { background:var(–blue); border-radius:8px; padding:12px 16px; display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
 .entry-total-lbl { font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(245,240,232,.8); }
-.entry-total-amt { font-family:'Playfair Display',serif; font-size:26px; font-weight:900; color:var(--cream); }
+.entry-total-amt { font-family:‘Playfair Display’,serif; font-size:26px; font-weight:900; color:var(–cream); }
 
 /* ── TABLE ── */
 .tbl-wrap { overflow-x:auto; }
 table { width:100%; border-collapse:collapse; min-width:620px; }
 thead tr { background:rgba(255,255,255,.04); }
 th { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(245,240,232,.35); padding:11px 14px; text-align:left; border-bottom:1px solid rgba(255,255,255,.07); white-space:nowrap; }
-td { font-size:13px; font-weight:500; color:var(--cream); padding:10px 14px; border-bottom:1px solid rgba(255,255,255,.05); vertical-align:middle; }
+td { font-size:13px; font-weight:500; color:var(–cream); padding:10px 14px; border-bottom:1px solid rgba(255,255,255,.05); vertical-align:middle; }
 tr:last-child td { border-bottom:none; }
 tr:nth-child(even) td { background:rgba(255,255,255,.02); }
 .badge { display:inline-block; font-size:11px; font-weight:700; padding:3px 9px; border-radius:100px; letter-spacing:1px; white-space:nowrap; }
@@ -140,40 +131,40 @@ tr:nth-child(even) td { background:rgba(255,255,255,.02); }
 .b-cash   { background:rgba(33,150,243,.15); color:#64b5f6; border:1px solid rgba(33,150,243,.3); }
 .b-card   { background:rgba(156,39,176,.15); color:#ce93d8; border:1px solid rgba(156,39,176,.3); }
 .b-online { background:rgba(76,175,80,.15);  color:#66bb6a; border:1px solid rgba(76,175,80,.3); }
-.t-contact { color:var(--blue-l); font-weight:600; }
+.t-contact { color:var(–blue-l); font-weight:600; }
 .t-tickets { font-size:11px; color:rgba(245,240,232,.3); }
 
 /* ── DRAW ── */
 .draw-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:12px; padding:16px; }
 .draw-card { background:rgba(255,255,255,.04); border:1.5px solid rgba(255,255,255,.08); border-radius:10px; overflow:hidden; }
 .draw-head { background:rgba(43,78,191,.2); padding:10px 14px; display:flex; justify-content:space-between; align-items:center; }
-.draw-pname  { font-family:'Playfair Display',serif; font-size:16px; font-weight:700; color:var(--cream); }
+.draw-pname  { font-family:‘Playfair Display’,serif; font-size:16px; font-weight:700; color:var(–cream); }
 .draw-pcount { font-size:12px; font-weight:600; color:rgba(245,240,232,.4); }
 .draw-body { padding:12px 14px; }
 .draw-list { list-style:none; border:1px solid rgba(255,255,255,.07); border-radius:6px; max-height:150px; overflow-y:auto; margin-bottom:10px; }
-.draw-list li { display:flex; justify-content:space-between; align-items:center; padding:7px 10px; border-bottom:1px solid rgba(255,255,255,.05); font-size:13px; color:var(--cream); }
+.draw-list li { display:flex; justify-content:space-between; align-items:center; padding:7px 10px; border-bottom:1px solid rgba(255,255,255,.05); font-size:13px; color:var(–cream); }
 .draw-list li:last-child { border-bottom:none; }
 .draw-li-sub  { font-size:11px; opacity:.4; }
-.draw-li-tix  { font-family:'Playfair Display',serif; font-size:13px; color:var(--blue-l); }
-.draw-btn { width:100%; background:var(--blue); color:white; border:none; font-family:'Playfair Display',serif; font-size:16px; font-weight:700; padding:10px; border-radius:8px; cursor:pointer; margin-bottom:8px; }
-.draw-btn:hover { background:var(--blue-d); }
+.draw-li-tix  { font-family:‘Playfair Display’,serif; font-size:13px; color:var(–blue-l); }
+.draw-btn { width:100%; background:var(–blue); color:white; border:none; font-family:‘Playfair Display’,serif; font-size:16px; font-weight:700; padding:10px; border-radius:8px; cursor:pointer; margin-bottom:8px; }
+.draw-btn:hover { background:var(–blue-d); }
 .draw-btn:disabled { background:#444; cursor:not-allowed; }
-.draw-result { display:none; background:var(--blue); border-radius:8px; padding:12px 14px; text-align:center; }
+.draw-result { display:none; background:var(–blue); border-radius:8px; padding:12px 14px; text-align:center; }
 .draw-result.show { display:block; }
-.draw-winner  { font-family:'Playfair Display',serif; font-size:22px; font-weight:900; color:var(--cream); }
+.draw-winner  { font-family:‘Playfair Display’,serif; font-size:22px; font-weight:900; color:var(–cream); }
 .draw-contact { font-size:13px; color:rgba(245,240,232,.7); margin-top:4px; }
 .draw-tcount  { font-size:12px; color:rgba(245,240,232,.5); margin-top:2px; }
 .redraw-btn   { background:none; border:1px solid rgba(245,240,232,.3); color:rgba(245,240,232,.6); font-size:12px; font-weight:600; padding:5px 12px; border-radius:6px; cursor:pointer; margin-top:8px; }
 .redraw-btn:hover { border-color:white; color:white; }
-.drum { font-family:'Playfair Display',serif; font-size:22px; color:var(--cream); animation:pulse .3s infinite alternate; }
+.drum { font-family:‘Playfair Display’,serif; font-size:22px; color:var(–cream); animation:pulse .3s infinite alternate; }
 @keyframes pulse { from{opacity:.3} to{opacity:1} }
 
 /* ── SHARED ── */
-.primary-btn { background:var(--blue); color:white; border:none; font-family:'Playfair Display',serif; font-size:18px; font-weight:700; padding:12px 24px; border-radius:8px; cursor:pointer; display:flex; align-items:center; gap:8px; }
-.primary-btn:hover { background:var(--blue-d); }
+.primary-btn { background:var(–blue); color:white; border:none; font-family:‘Playfair Display’,serif; font-size:18px; font-weight:700; padding:12px 24px; border-radius:8px; cursor:pointer; display:flex; align-items:center; gap:8px; }
+.primary-btn:hover { background:var(–blue-d); }
 .primary-btn:disabled { background:#555; cursor:not-allowed; }
 .ghost-btn { background:none; border:1.5px solid rgba(255,255,255,.1); color:rgba(245,240,232,.4); font-size:13px; font-weight:600; padding:10px 16px; border-radius:8px; cursor:pointer; }
-.ghost-btn:hover { border-color:rgba(255,255,255,.3); color:var(--cream); }
+.ghost-btn:hover { border-color:rgba(255,255,255,.3); color:var(–cream); }
 .msg-ok  { display:none; background:rgba(76,175,80,.1);  border:1.5px solid rgba(76,175,80,.3);  border-radius:8px; padding:10px 14px; font-size:13px; font-weight:700; color:#66bb6a; margin-top:10px; }
 .msg-err { display:none; background:rgba(198,40,40,.1);  border:1.5px solid rgba(198,40,40,.3);  border-radius:8px; padding:10px 14px; font-size:13px; font-weight:700; color:#ef9a9a; margin-top:10px; }
 .msg-ok.show  { display:block; }
@@ -184,14 +175,13 @@ tr:nth-child(even) td { background:rgba(255,255,255,.02); }
 
 .tab-panel { display:none; }
 .tab-panel.active { display:block; }
-
-.upload-progress { display:none; font-size:11px; color:var(--blue-l); margin-top:4px; }
-.upload-progress.show { display:block; }
 </style>
+
 </head>
 <body>
 
 <!-- LOGIN -->
+
 <div class="login-wrap" id="loginScreen">
   <div class="login-card">
     <div class="login-top">
@@ -209,7 +199,9 @@ tr:nth-child(even) td { background:rgba(255,255,255,.02); }
 </div>
 
 <!-- DASHBOARD -->
+
 <div class="dashboard" id="dashboard">
+
   <div class="header">
     <div class="header-inner">
       <div class="logo">The Lucky Crumb <span>Admin</span></div>
@@ -233,104 +225,108 @@ tr:nth-child(even) td { background:rgba(255,255,255,.02); }
   </div>
 
   <div class="main">
-    <!-- OVERVIEW -->
-    <div class="tab-panel active" id="tab-overview">
-      <div class="sl">Overview</div>
-      <div class="stats-grid" id="statsGrid">
-        <div class="stat hl"><div class="stat-top">Total Raised</div><div class="stat-num green" id="sTotal">–</div></div>
-        <div class="stat">   <div class="stat-top">Orders</div>      <div class="stat-num"       id="sOrders">–</div></div>
-        <div class="stat">   <div class="stat-top">Tickets Sold</div><div class="stat-num"       id="sTickets">–</div></div>
-        <div class="stat">   <div class="stat-top">Paid ✅</div>     <div class="stat-num green" id="sPaid">–</div></div>
-        <div class="stat">   <div class="stat-top">Pending ⏳</div>  <div class="stat-num orange"id="sPending">–</div></div>
+
+```
+<!-- OVERVIEW -->
+<div class="tab-panel active" id="tab-overview">
+  <div class="sl">Overview</div>
+  <div class="stats-grid" id="statsGrid">
+    <div class="stat hl"><div class="stat-top">Total Raised</div><div class="stat-num green" id="sTotal">–</div></div>
+    <div class="stat">   <div class="stat-top">Orders</div>      <div class="stat-num"       id="sOrders">–</div></div>
+    <div class="stat">   <div class="stat-top">Tickets Sold</div><div class="stat-num"       id="sTickets">–</div></div>
+    <div class="stat">   <div class="stat-top">Paid ✅</div>     <div class="stat-num green" id="sPaid">–</div></div>
+    <div class="stat">   <div class="stat-top">Pending ⏳</div>  <div class="stat-num orange"id="sPending">–</div></div>
+  </div>
+  <div class="sl" style="margin-top:24px">Prize Popularity</div>
+  <div class="card"><div class="card-body" id="prizeBars"><div class="empty">Press refresh to load</div></div></div>
+</div>
+
+<!-- PRIZE EDITOR -->
+<div class="tab-panel" id="tab-editor">
+  <div class="sl">Prize Editor</div>
+  <div class="card"><div class="card-body">
+    <p style="font-size:13px;color:rgba(245,240,232,.4);margin-bottom:16px">Changes save to Firebase and update the raffle page immediately.</p>
+    <div class="col-hdrs">
+      <span class="col-hdr">Emoji</span>
+      <span class="col-hdr">Name</span>
+      <span class="col-hdr">Price (R)</span>
+      <span class="col-hdr">Description</span>
+      <span class="col-hdr"></span>
+    </div>
+    <div id="peRows" style="display:flex;flex-direction:column;gap:8px;margin-bottom:12px"></div>
+    <button class="add-row-btn" onclick="addPrizeRow()">+ Add Prize</button>
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+      <button class="primary-btn" id="savePrizesBtn" onclick="savePrizes()">Save Prizes →</button>
+      <button class="ghost-btn"   onclick="loadEditor()">↺ Reset</button>
+    </div>
+    <div class="msg-ok"  id="peOk"></div>
+    <div class="msg-err" id="peErr"></div>
+  </div></div>
+</div>
+
+<!-- MANUAL SALE -->
+<div class="tab-panel" id="tab-manual">
+  <div class="sl">Add Manual Sale <span style="font-size:10px;opacity:.4;margin-left:8px">Cash / Card</span></div>
+  <div class="card"><div class="card-body">
+    <div class="entry-grid">
+      <div class="ef">
+        <label class="albl">Customer Name *</label>
+        <input class="a-inp" id="eName" type="text" placeholder="Full name..." maxlength="50">
       </div>
-      <div class="sl" style="margin-top:24px">Prize Popularity</div>
-      <div class="card"><div class="card-body" id="prizeBars"><div class="empty">Press refresh to load</div></div></div>
-    </div>
-
-    <!-- PRIZE EDITOR -->
-    <div class="tab-panel" id="tab-editor">
-      <div class="sl">Prize Editor</div>
-      <div class="card"><div class="card-body">
-        <p style="font-size:13px;color:rgba(245,240,232,.4);margin-bottom:16px">
-          Upload images for each prize or use emoji. Images are stored in Firebase Storage and auto-update on the raffle page.
-        </p>
-        <div class="col-hdrs">
-          <span class="col-hdr">Image</span>
-          <span class="col-hdr">Name</span>
-          <span class="col-hdr">Price (R)</span>
-          <span class="col-hdr">Description</span>
-          <span class="col-hdr">Emoji</span>
-          <span class="col-hdr"></span>
+      <div class="ef">
+        <label class="albl">Contact (Insta / WhatsApp)</label>
+        <input class="a-inp" id="eContact" type="text" placeholder="@handle or +27...">
+      </div>
+      <div class="ef">
+        <label class="albl">Payment Method *</label>
+        <div class="pay-tog">
+          <button class="pay-btn active" id="payCash" onclick="setPayment('cash')">💵 Cash</button>
+          <button class="pay-btn"        id="payCard" onclick="setPayment('card')">💳 Card</button>
         </div>
-        <div id="peRows"></div>
-        <button class="add-row-btn" onclick="addPrizeRow()">+ Add Prize</button>
-        <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
-          <button class="primary-btn" id="savePrizesBtn" onclick="savePrizes()">Save Prizes →</button>
-          <button class="ghost-btn"   onclick="loadEditor()">↺ Reset</button>
-        </div>
-        <div class="msg-ok"  id="peOk"></div>
-        <div class="msg-err" id="peErr"></div>
-      </div></div>
-    </div>
-
-    <!-- MANUAL SALE -->
-    <div class="tab-panel" id="tab-manual">
-      <div class="sl">Add Manual Sale <span style="font-size:10px;opacity:.4;margin-left:8px">Cash / Card</span></div>
-      <div class="card"><div class="card-body">
-        <div class="entry-grid">
-          <div class="ef">
-            <label class="albl">Customer Name *</label>
-            <input class="a-inp" id="eName" type="text" placeholder="Full name..." maxlength="50">
-          </div>
-          <div class="ef">
-            <label class="albl">Contact (Insta / WhatsApp)</label>
-            <input class="a-inp" id="eContact" type="text" placeholder="@handle or +27...">
-          </div>
-          <div class="ef">
-            <label class="albl">Payment Method *</label>
-            <div class="pay-tog">
-              <button class="pay-btn active" id="payCash" onclick="setPayment('cash')">💵 Cash</button>
-              <button class="pay-btn"        id="payCard" onclick="setPayment('card')">💳 Card</button>
-            </div>
-          </div>
-        </div>
-        <label class="albl" style="display:block;margin-bottom:8px">Select Prizes & Quantities *</label>
-        <div class="pc-grid" id="pcGrid"></div>
-        <div class="entry-total">
-          <span class="entry-total-lbl">Total</span>
-          <span class="entry-total-amt" id="eTotal">R0</span>
-        </div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <button class="primary-btn" id="eSubmitBtn" onclick="submitManual()">Add Sale →</button>
-          <button class="ghost-btn"   onclick="resetManual()">Clear</button>
-        </div>
-        <div class="msg-ok"  id="eOk"></div>
-        <div class="msg-err" id="eErr"></div>
-      </div></div>
-    </div>
-
-    <!-- ORDERS -->
-    <div class="tab-panel" id="tab-orders">
-      <div class="sl">All Orders <span style="font-size:10px;opacity:.4;margin-left:8px" id="orderCount"></span></div>
-      <div class="card">
-        <div class="tbl-wrap" id="ordersTable"><div class="empty">Press refresh to load</div></div>
       </div>
     </div>
-
-    <!-- DRAW -->
-    <div class="tab-panel" id="tab-draw">
-      <div class="sl">🎰 Draw Winners <span style="font-size:10px;opacity:.4;margin-left:8px">Paid entries only</span></div>
-      <div class="card" style="padding:0">
-        <div class="draw-grid" id="drawGrid"><div class="empty" style="grid-column:1/-1">Press refresh to load</div></div>
-      </div>
+    <label class="albl" style="display:block;margin-bottom:8px">Select Prizes & Quantities *</label>
+    <div class="pc-grid" id="pcGrid"></div>
+    <div class="entry-total">
+      <span class="entry-total-lbl">Total</span>
+      <span class="entry-total-amt" id="eTotal">R0</span>
     </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="primary-btn" id="eSubmitBtn" onclick="submitManual()">Add Sale →</button>
+      <button class="ghost-btn"   onclick="resetManual()">Clear</button>
+    </div>
+    <div class="msg-ok"  id="eOk"></div>
+    <div class="msg-err" id="eErr"></div>
+  </div></div>
+</div>
+
+<!-- ORDERS -->
+<div class="tab-panel" id="tab-orders">
+  <div class="sl">All Orders <span style="font-size:10px;opacity:.4;margin-left:8px" id="orderCount"></span></div>
+  <div class="card">
+    <div class="tbl-wrap" id="ordersTable"><div class="empty">Press refresh to load</div></div>
   </div>
 </div>
 
-<!-- FIREBASE CONFIG -->
+<!-- DRAW -->
+<div class="tab-panel" id="tab-draw">
+  <div class="sl">🎰 Draw Winners <span style="font-size:10px;opacity:.4;margin-left:8px">Paid entries only</span></div>
+  <div class="card" style="padding:0">
+    <div class="draw-grid" id="drawGrid"><div class="empty" style="grid-column:1/-1">Press refresh to load</div></div>
+  </div>
+</div>
+```
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     FIREBASE CONFIG  ←  PASTE YOUR CONFIG HERE
+══════════════════════════════════════════════════════════ -->
+
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-storage-compat.js"></script>
 
 <script>
 // ▼▼▼ REPLACE THIS BLOCK WITH YOUR FIREBASE CONFIG ▼▼▼
@@ -349,7 +345,6 @@ const ADMIN_PASSWORD = '1234'; // ← CHANGE THIS
 
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
-const storage = firebase.storage();
 
 // ── State ──
 let prizes      = [];
@@ -417,223 +412,41 @@ async function loadEditor() {
 }
 
 function renderPeRows() {
-  const container = document.getElementById('peRows');
-  container.innerHTML = '';
-  
-  prizes.forEach((p, i) => {
-    const row = document.createElement('div');
-    row.className = 'pe-row';
-    row.id = 'per' + i;
-    
-    // Image cell
-    const imgCell = document.createElement('div');
-    imgCell.className = 'pe-img-cell';
-    const hasImg = p.imageUrl && p.imageUrl.trim();
-    if (hasImg) {
-      const img = document.createElement('img');
-      img.src = p.imageUrl;
-      img.className = 'pe-img-preview';
-      img.alt = p.name || 'Prize';
-      imgCell.appendChild(img);
-      
-      const removeBtn = document.createElement('button');
-      removeBtn.className = 'pe-img-btn remove';
-      removeBtn.textContent = 'Remove';
-      removeBtn.onclick = () => removeImage(i);
-      imgCell.appendChild(removeBtn);
-    } else {
-      const placeholder = document.createElement('div');
-      placeholder.className = 'pe-img-placeholder';
-      placeholder.textContent = '📷';
-      imgCell.appendChild(placeholder);
-      
-      const uploadBtn = document.createElement('button');
-      uploadBtn.className = 'pe-img-btn';
-      uploadBtn.textContent = 'Upload';
-      uploadBtn.onclick = () => document.getElementById('imgInput' + i).click();
-      imgCell.appendChild(uploadBtn);
-      
-      const input = document.createElement('input');
-      input.type = 'file';
-      input.accept = 'image/*';
-      input.className = 'pe-img-input';
-      input.id = 'imgInput' + i;
-      input.onchange = (e) => uploadImage(i, e.target.files[0]);
-      imgCell.appendChild(input);
-    }
-    
-    const progress = document.createElement('div');
-    progress.className = 'upload-progress';
-    progress.id = 'progress' + i;
-    imgCell.appendChild(progress);
-    row.appendChild(imgCell);
-    
-    // Name
-    const nameInp = document.createElement('input');
-    nameInp.className = 'pe-inp';
-    nameInp.type = 'text';
-    nameInp.value = p.name || '';
-    nameInp.placeholder = 'Prize name';
-    nameInp.dataset.i = i;
-    nameInp.dataset.f = 'name';
-    nameInp.onchange = function() { peUpdate(this); };
-    row.appendChild(nameInp);
-    
-    // Price
-    const priceInp = document.createElement('input');
-    priceInp.className = 'pe-inp';
-    priceInp.type = 'number';
-    priceInp.value = p.price || 0;
-    priceInp.placeholder = 'Price';
-    priceInp.min = '1';
-    priceInp.dataset.i = i;
-    priceInp.dataset.f = 'price';
-    priceInp.onchange = function() { peUpdate(this); };
-    row.appendChild(priceInp);
-    
-    // Description
-    const descInp = document.createElement('input');
-    descInp.className = 'pe-inp';
-    descInp.type = 'text';
-    descInp.value = p.desc || '';
-    descInp.placeholder = 'Short description';
-    descInp.dataset.i = i;
-    descInp.dataset.f = 'desc';
-    descInp.onchange = function() { peUpdate(this); };
-    row.appendChild(descInp);
-    
-    // Emoji
-    const emojiInp = document.createElement('input');
-    emojiInp.className = 'pe-inp pe-emoji';
-    emojiInp.type = 'text';
-    emojiInp.value = p.emoji || '🎁';
-    emojiInp.dataset.i = i;
-    emojiInp.dataset.f = 'emoji';
-    emojiInp.onchange = function() { peUpdate(this); };
-    row.appendChild(emojiInp);
-    
-    // Delete button
-    const delBtn = document.createElement('button');
-    delBtn.className = 'pe-del';
-    delBtn.textContent = '✕';
-    delBtn.onclick = () => delPrize(i);
-    row.appendChild(delBtn);
-    
-    container.appendChild(row);
-  });
-}
-
-async function uploadImage(i, file) {
-  if (!file) return;
-  
-  // Validate file type
-  if (!file.type.startsWith('image/')) {
-    alert('Please select an image file');
-    return;
-  }
-  
-  // Validate file size (max 5MB)
-  if (file.size > 5 * 1024 * 1024) {
-    alert('Image must be smaller than 5MB');
-    return;
-  }
-  
-  const progress = document.getElementById('progress' + i);
-  progress.textContent = 'Uploading...';
-  progress.classList.add('show');
-  
-  try {
-    // Create unique filename
-    const timestamp = Date.now();
-    const safeName = prizes[i].name.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-    const ext = file.name.split('.').pop();
-    const filename = `prize_${safeName}_${timestamp}.${ext}`;
-    
-    // Upload to Firebase Storage
-    const storageRef = storage.ref(`prize-images/${filename}`);
-    const uploadTask = storageRef.put(file);
-    
-    uploadTask.on('state_changed',
-      (snapshot) => {
-        const pct = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-        progress.textContent = `${pct}%`;
-      },
-      (error) => {
-        progress.textContent = 'Upload failed';
-        setTimeout(() => progress.classList.remove('show'), 2000);
-        console.error('Upload error:', error);
-      },
-      async () => {
-        // Get download URL
-        const url = await uploadTask.snapshot.ref.getDownloadURL();
-        prizes[i].imageUrl = url;
-        
-        progress.textContent = 'Done!';
-        setTimeout(() => {
-          progress.classList.remove('show');
-          renderPeRows();
-        }, 1000);
-      }
-    );
-  } catch(e) {
-    progress.textContent = 'Error: ' + e.message;
-    setTimeout(() => progress.classList.remove('show'), 3000);
-  }
-}
-
-async function removeImage(i) {
-  if (!confirm('Remove this image?')) return;
-  
-  // Delete from storage if URL exists
-  if (prizes[i].imageUrl) {
-    try {
-      const url = prizes[i].imageUrl;
-      const path = decodeURIComponent(url.split('/o/')[1].split('?')[0]);
-      await storage.ref(path).delete();
-    } catch(e) {
-      console.warn('Could not delete old image:', e);
-    }
-  }
-  
-  prizes[i].imageUrl = '';
-  renderPeRows();
+  document.getElementById('peRows').innerHTML = prizes.map((p, i) => `
+    <div class="pe-row" id="per${i}">
+      <input class="pe-inp pe-emoji" type="text" value="${p.emoji||'🎁'}" data-i="${i}" data-f="emoji" onchange="peUpdate(this)">
+      <input class="pe-inp" type="text"   value="${escH(p.name)}"  placeholder="Prize name"        data-i="${i}" data-f="name"  onchange="peUpdate(this)">
+      <input class="pe-inp" type="number" value="${p.price}"        placeholder="Price" min="1"      data-i="${i}" data-f="price" onchange="peUpdate(this)">
+      <input class="pe-inp" type="text"   value="${escH(p.desc||'')}" placeholder="Short description" data-i="${i}" data-f="desc"  onchange="peUpdate(this)">
+      <button class="pe-del" onclick="delPrize(${i})">✕</button>
+    </div>`).join('');
 }
 
 function peUpdate(el) {
   const i = parseInt(el.dataset.i), f = el.dataset.f;
   prizes[i][f] = f === 'price' ? (parseInt(el.value)||0) : el.value;
 }
-
-function delPrize(i) { 
-  prizes.splice(i, 1); 
-  renderPeRows(); 
-  buildPcGrid(); 
-}
-
+function delPrize(i) { prizes.splice(i, 1); renderPeRows(); buildPcGrid(); }
 function addPrizeRow() {
-  prizes.push({ name:'', emoji:'🎁', price:50, desc:'', value:'', imageUrl:'' });
-  renderPeRows(); 
-  buildPcGrid();
+  prizes.push({ name:'', emoji:'🎁', price:50, desc:'', value:'' });
+  renderPeRows(); buildPcGrid();
   const rows = document.querySelectorAll('.pe-row');
   if (rows.length) {
-    const inp = rows[rows.length-1].querySelectorAll('.pe-inp')[0];
+    const inp = rows[rows.length-1].querySelectorAll('.pe-inp')[1];
     if (inp) setTimeout(() => inp.focus(), 50);
   }
 }
-
 async function savePrizes() {
   // Collect latest values from DOM
   document.querySelectorAll('[data-f]').forEach(el => {
     const i = parseInt(el.dataset.i), f = el.dataset.f;
     if (prizes[i]) prizes[i][f] = f === 'price' ? (parseInt(el.value)||0) : el.value;
   });
-  
   const btn = document.getElementById('savePrizesBtn');
   const ok  = document.getElementById('peOk');
   const err = document.getElementById('peErr');
   ok.classList.remove('show'); err.classList.remove('show');
   btn.disabled = true; btn.innerHTML = '<span class="spinner"></span> Saving...';
-  
   try {
     await db.collection('config').doc('prizes').set({
       list: prizes,
@@ -649,38 +462,27 @@ async function savePrizes() {
 
 // ── MANUAL ENTRY ──
 function buildPcGrid() {
-  document.getElementById('pcGrid').innerHTML = prizes.map((p, i) => {
-    const hasImg = p.imageUrl && p.imageUrl.trim();
-    const imgHtml = hasImg 
-      ? `<img src="${escH(p.imageUrl)}" alt="${escH(p.name)}" class="pc-img">`
-      : `<span class="pc-emoji">${p.emoji||'🎁'}</span>`;
-    
-    return `
+  document.getElementById('pcGrid').innerHTML = prizes.map((p, i) => `
     <label class="pc-item" id="pci${i}" onclick="pcToggle(${i})">
       <input type="checkbox" id="pcb${i}" onclick="event.stopPropagation()" onchange="pcToggle2(${i})">
-      ${imgHtml}
       <div style="flex:1;min-width:0">
-        <div class="pcn">${escH(p.name)}</div>
+        <div class="pcn">${p.emoji||''} ${escH(p.name)}</div>
         <div class="pcp">R${p.price}/ticket</div>
       </div>
       <input type="number" class="pqty" id="pcq${i}" value="1" min="1" max="20"
         onclick="event.stopPropagation()" onchange="calcEntryTotal()">
-    </label>`;
-  }).join('');
+    </label>`).join('');
 }
-
 function pcToggle(i) {
   const cb = document.getElementById('pcb' + i);
   cb.checked = !cb.checked;
   document.getElementById('pci' + i).classList.toggle('sel', cb.checked);
   calcEntryTotal();
 }
-
 function pcToggle2(i) {
   document.getElementById('pci' + i).classList.toggle('sel', document.getElementById('pcb' + i).checked);
   calcEntryTotal();
 }
-
 function calcEntryTotal() {
   let t = 0;
   prizes.forEach((p, i) => {
@@ -689,13 +491,11 @@ function calcEntryTotal() {
   });
   document.getElementById('eTotal').textContent = 'R' + t;
 }
-
 function setPayment(type) {
   payMethod = type;
   document.getElementById('payCash').classList.toggle('active', type === 'cash');
   document.getElementById('payCard').classList.toggle('active', type === 'card');
 }
-
 function resetManual() {
   document.getElementById('eName').value = '';
   document.getElementById('eContact').value = '';
@@ -709,7 +509,6 @@ function resetManual() {
   document.getElementById('eOk').classList.remove('show');
   document.getElementById('eErr').classList.remove('show');
 }
-
 async function submitManual() {
   const nameEl = document.getElementById('eName');
   const name   = nameEl.value.trim();

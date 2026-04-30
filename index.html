@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -20,141 +21,134 @@ body { background: var(--cream); font-family: 'DM Sans', sans-serif; min-height:
 
 /* ── HEADER ── */
 .header {
-  background: var(--cream);
-  border-bottom: 2px solid var(--blue);
-  padding: 16px 20px;
-  position: sticky; top: 0; z-index: 50;
+background: var(–cream);
+border-bottom: 2px solid var(–blue);
+padding: 16px 20px;
+position: sticky; top: 0; z-index: 50;
 }
 .header-inner { max-width: 700px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .logo-row { display: flex; align-items: center; gap: 12px; }
-.logo-icon { width: 48px; height: 48px; border-radius: 50%; background: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
-.logo-name { font-family: 'Playfair Display', serif; font-size: clamp(17px,4vw,22px); font-weight: 900; color: var(--blue); line-height: 1; }
-.logo-sub  { font-size: 11px; font-weight: 700; color: var(--muted); letter-spacing: 2.5px; text-transform: uppercase; margin-top: 2px; }
-.live-badge { background: var(--blue); color: var(--cream); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; white-space: nowrap; }
+.logo-icon { width: 48px; height: 48px; border-radius: 50%; background: var(–blue); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+.logo-name { font-family: ‘Playfair Display’, serif; font-size: clamp(17px,4vw,22px); font-weight: 900; color: var(–blue); line-height: 1; }
+.logo-sub  { font-size: 11px; font-weight: 700; color: var(–muted); letter-spacing: 2.5px; text-transform: uppercase; margin-top: 2px; }
+.live-badge { background: var(–blue); color: var(–cream); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; white-space: nowrap; }
 
 /* ── HERO ── */
-.hero { background: var(--blue); padding: 40px 24px 34px; text-align: center; position: relative; overflow: hidden; }
-.hero::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.06), transparent 60%); }
+.hero { background: var(–blue); padding: 40px 24px 34px; text-align: center; position: relative; overflow: hidden; }
+.hero::before { content:’’; position:absolute; inset:0; background: radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.06), transparent 60%); }
 .hero-inner { position: relative; }
-.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(52px,14vw,96px); font-weight: 900; color: var(--cream); line-height: 0.88; letter-spacing: -3px; }
+.hero h1 { font-family: ‘Playfair Display’, serif; font-size: clamp(52px,14vw,96px); font-weight: 900; color: var(–cream); line-height: 0.88; letter-spacing: -3px; }
 .hero-sub { font-size: clamp(12px,3vw,15px); font-weight: 600; color: rgba(245,240,232,0.6); letter-spacing: 2.5px; text-transform: uppercase; margin-top: 14px; }
-.hero-tag { display: inline-block; margin-top: 16px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: var(--cream); font-style: italic; font-size: 15px; padding: 8px 22px; border-radius: 100px; }
+.hero-tag { display: inline-block; margin-top: 16px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: var(–cream); font-style: italic; font-size: 15px; padding: 8px 22px; border-radius: 100px; }
 
 /* ── PAGE ── */
 .page { max-width: 700px; margin: 0 auto; padding: 28px 16px 130px; }
 
 /* ── SECTION LABEL ── */
-.sec-lbl { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; margin-top: 32px; display: flex; align-items: center; gap: 10px; }
-.sec-lbl::after { content:''; flex:1; height:1px; background: var(--blue); opacity:.2; }
+.sec-lbl { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(–blue); margin-bottom: 12px; margin-top: 32px; display: flex; align-items: center; gap: 10px; }
+.sec-lbl::after { content:’’; flex:1; height:1px; background: var(–blue); opacity:.2; }
 
 /* ── PRIZE CARDS ── */
 .prizes-list { display: flex; flex-direction: column; gap: 10px; }
 .prize-card {
-  background: white; border: 1.5px solid var(--cream-d); border-radius: 12px;
-  padding: 16px 18px; display: flex; align-items: center; gap: 14px;
-  transition: border-color .2s, box-shadow .2s;
+background: white; border: 1.5px solid var(–cream-d); border-radius: 12px;
+padding: 16px 18px; display: flex; align-items: center; gap: 14px;
+transition: border-color .2s, box-shadow .2s;
 }
-.prize-card.active { border-color: var(--blue); background: rgba(43,78,191,0.03); box-shadow: 0 2px 16px rgba(43,78,191,0.1); }
-.prize-img-wrap { 
-  width: 64px; height: 64px; flex-shrink: 0; 
-  border-radius: 8px; overflow: hidden; 
-  background: var(--cream-d);
-  display: flex; align-items: center; justify-content: center;
-}
-.prize-img { width: 100%; height: 100%; object-fit: cover; }
-.prize-emoji { font-size: 32px; }
+.prize-card.active { border-color: var(–blue); background: rgba(43,78,191,0.03); box-shadow: 0 2px 16px rgba(43,78,191,0.1); }
+.prize-emoji { font-size: 28px; width: 44px; text-align: center; flex-shrink: 0; }
 .prize-info { flex: 1; min-width: 0; }
-.prize-name  { font-family: 'Playfair Display', serif; font-size: clamp(16px,4vw,20px); font-weight: 700; line-height: 1.1; }
-.prize-desc  { font-size: 13px; color: var(--muted); margin-top: 2px; font-weight: 500; }
-.prize-val   { font-size: 12px; font-weight: 700; color: var(--blue); margin-top: 3px; }
+.prize-name  { font-family: ‘Playfair Display’, serif; font-size: clamp(16px,4vw,20px); font-weight: 700; line-height: 1.1; }
+.prize-desc  { font-size: 13px; color: var(–muted); margin-top: 2px; font-weight: 500; }
+.prize-val   { font-size: 12px; font-weight: 700; color: var(–blue); margin-top: 3px; }
 .prize-right { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; flex-shrink: 0; }
-.price-tag   { font-family: 'Playfair Display', serif; font-size: clamp(18px,4vw,22px); font-weight: 700; color: var(--blue); }
-.qty-ctrl    { display: flex; align-items: center; border: 1.5px solid var(--blue); border-radius: 8px; overflow: hidden; }
-.qty-btn     { background: var(--blue); color: white; border: none; width: 34px; height: 34px; font-size: 18px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .15s; user-select: none; -webkit-tap-highlight-color: transparent; }
-.qty-btn:hover  { background: var(--blue-dark); }
+.price-tag   { font-family: ‘Playfair Display’, serif; font-size: clamp(18px,4vw,22px); font-weight: 700; color: var(–blue); }
+.qty-ctrl    { display: flex; align-items: center; border: 1.5px solid var(–blue); border-radius: 8px; overflow: hidden; }
+.qty-btn     { background: var(–blue); color: white; border: none; width: 34px; height: 34px; font-size: 18px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .15s; user-select: none; -webkit-tap-highlight-color: transparent; }
+.qty-btn:hover  { background: var(–blue-dark); }
 .qty-btn:active { transform: scale(.93); }
-.qty-num { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; width: 36px; text-align: center; background: white; }
+.qty-num { font-family: ‘Playfair Display’, serif; font-size: 18px; font-weight: 700; width: 36px; text-align: center; background: white; }
 
 /* ── LOADING STATE ── */
-.prizes-loading { text-align: center; padding: 40px; color: var(--muted); font-size: 14px; font-weight: 600; letter-spacing: 1px; }
+.prizes-loading { text-align: center; padding: 40px; color: var(–muted); font-size: 14px; font-weight: 600; letter-spacing: 1px; }
 
 /* ── CART ── */
-.cart-wrap { background: white; border: 1.5px solid var(--cream-d); border-radius: 12px; overflow: hidden; margin-top: 12px; }
-.cart-empty { text-align: center; padding: 28px 20px; font-size: 14px; font-weight: 600; color: var(--muted); }
-.cart-item  { display: flex; justify-content: space-between; align-items: center; padding: 13px 18px; border-bottom: 1px solid var(--cream-d); }
+.cart-wrap { background: white; border: 1.5px solid var(–cream-d); border-radius: 12px; overflow: hidden; margin-top: 12px; }
+.cart-empty { text-align: center; padding: 28px 20px; font-size: 14px; font-weight: 600; color: var(–muted); }
+.cart-item  { display: flex; justify-content: space-between; align-items: center; padding: 13px 18px; border-bottom: 1px solid var(–cream-d); }
 .cart-item:last-of-type { border-bottom: none; }
-.cart-item-name { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; }
-.cart-item-meta { font-size: 12px; font-weight: 600; color: var(--muted); margin-top: 1px; }
-.cart-item-price { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--blue); }
-.cart-total-bar  { background: var(--blue); display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; }
+.cart-item-name { font-family: ‘Playfair Display’, serif; font-size: 16px; font-weight: 700; }
+.cart-item-meta { font-size: 12px; font-weight: 600; color: var(–muted); margin-top: 1px; }
+.cart-item-price { font-family: ‘Playfair Display’, serif; font-size: 18px; font-weight: 700; color: var(–blue); }
+.cart-total-bar  { background: var(–blue); display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; }
 .cart-total-lbl  { font-size: 13px; font-weight: 700; color: rgba(245,240,232,.8); letter-spacing: 2px; text-transform: uppercase; }
-.cart-total-amt  { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 900; color: var(--cream); }
+.cart-total-amt  { font-family: ‘Playfair Display’, serif; font-size: 26px; font-weight: 900; color: var(–cream); }
 .cart-actions { display: flex; gap: 10px; margin-top: 12px; }
-.checkout-btn { flex:1; background: var(--blue); color: white; border: none; font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; padding: 15px 20px; border-radius: 10px; cursor: pointer; transition: background .15s; display: none; }
-.checkout-btn:hover { background: var(--blue-dark); }
+.checkout-btn { flex:1; background: var(–blue); color: white; border: none; font-family: ‘Playfair Display’, serif; font-size: 18px; font-weight: 700; padding: 15px 20px; border-radius: 10px; cursor: pointer; transition: background .15s; display: none; }
+.checkout-btn:hover { background: var(–blue-dark); }
 .checkout-btn.show { display: block; }
-.clear-btn { background: none; border: 1.5px solid var(--cream-d); color: var(--muted); font-size: 13px; font-weight: 600; padding: 10px 16px; border-radius: 10px; cursor: pointer; display: none; transition: all .15s; white-space: nowrap; }
-.clear-btn:hover { border-color: var(--blue); color: var(--blue); }
+.clear-btn { background: none; border: 1.5px solid var(–cream-d); color: var(–muted); font-size: 13px; font-weight: 600; padding: 10px 16px; border-radius: 10px; cursor: pointer; display: none; transition: all .15s; white-space: nowrap; }
+.clear-btn:hover { border-color: var(–blue); color: var(–blue); }
 .clear-btn.show { display: block; }
 
 /* ── MODAL ── */
 .overlay { display: none; position: fixed; inset: 0; background: rgba(28,28,28,.75); z-index: 200; align-items: flex-end; justify-content: center; }
 .overlay.open { display: flex; }
 @media(min-width:520px){ .overlay { align-items: center; padding: 20px; } .modal { border-radius: 16px !important; } }
-.modal { background: var(--cream); width: 100%; max-width: 480px; border-radius: 20px 20px 0 0; overflow: hidden; max-height: 95vh; overflow-y: auto; animation: slideUp .25s ease; }
+.modal { background: var(–cream); width: 100%; max-width: 480px; border-radius: 20px 20px 0 0; overflow: hidden; max-height: 95vh; overflow-y: auto; animation: slideUp .25s ease; }
 .modal-handle { width: 40px; height: 4px; background: rgba(43,78,191,.2); border-radius: 2px; margin: 12px auto 0; }
-.modal-head { background: var(--blue); padding: 20px 24px 16px; }
-.modal-head h2 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 900; color: var(--cream); }
+.modal-head { background: var(–blue); padding: 20px 24px 16px; }
+.modal-head h2 { font-family: ‘Playfair Display’, serif; font-size: 28px; font-weight: 900; color: var(–cream); }
 .modal-head p  { font-size: 13px; color: rgba(245,240,232,.7); margin-top: 2px; }
 .modal-body { padding: 20px 24px; }
-.field-lbl { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; margin-top: 18px; display: block; }
+.field-lbl { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(–muted); margin-bottom: 6px; margin-top: 18px; display: block; }
 .field-lbl:first-child { margin-top: 0; }
-.m-input { width: 100%; border: 1.5px solid var(--cream-d); background: white; font-family: 'DM Sans', sans-serif; font-size: 17px; font-weight: 600; padding: 11px 14px; border-radius: 10px; color: var(--black); outline: none; transition: border-color .15s, box-shadow .15s; }
-.m-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(43,78,191,.1); }
+.m-input { width: 100%; border: 1.5px solid var(–cream-d); background: white; font-family: ‘DM Sans’, sans-serif; font-size: 17px; font-weight: 600; padding: 11px 14px; border-radius: 10px; color: var(–black); outline: none; transition: border-color .15s, box-shadow .15s; }
+.m-input:focus { border-color: var(–blue); box-shadow: 0 0 0 3px rgba(43,78,191,.1); }
 .m-input.err { border-color: #e53935; }
-.contact-toggle { display: flex; border: 1.5px solid var(--cream-d); border-radius: 10px; overflow: hidden; background: white; margin-bottom: 8px; }
-.tog-btn { flex:1; background: transparent; color: var(--muted); border: none; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; padding: 10px 8px; cursor: pointer; transition: all .15s; }
-.tog-btn.active { background: var(--blue); color: white; }
-.prefix-wrap { display: flex; align-items: center; border: 1.5px solid var(--cream-d); border-radius: 10px; overflow: hidden; background: white; transition: border-color .15s; }
-.prefix-wrap:focus-within { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(43,78,191,.1); }
+.contact-toggle { display: flex; border: 1.5px solid var(–cream-d); border-radius: 10px; overflow: hidden; background: white; margin-bottom: 8px; }
+.tog-btn { flex:1; background: transparent; color: var(–muted); border: none; font-family: ‘DM Sans’, sans-serif; font-size: 14px; font-weight: 700; padding: 10px 8px; cursor: pointer; transition: all .15s; }
+.tog-btn.active { background: var(–blue); color: white; }
+.prefix-wrap { display: flex; align-items: center; border: 1.5px solid var(–cream-d); border-radius: 10px; overflow: hidden; background: white; transition: border-color .15s; }
+.prefix-wrap:focus-within { border-color: var(–blue); box-shadow: 0 0 0 3px rgba(43,78,191,.1); }
 .prefix-wrap.err { border-color: #e53935; }
-.prefix { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--blue); padding: 10px 4px 10px 14px; flex-shrink: 0; }
+.prefix { font-family: ‘Playfair Display’, serif; font-size: 20px; font-weight: 700; color: var(–blue); padding: 10px 4px 10px 14px; flex-shrink: 0; }
 .prefix-wrap .m-input { border: none; padding-left: 4px; border-radius: 0; box-shadow: none !important; }
-.hint { font-size: 12px; font-weight: 600; color: var(--muted); margin-top: 5px; }
-.summary-box { background: var(--blue); border-radius: 10px; padding: 14px 16px; margin: 18px 0; }
+.hint { font-size: 12px; font-weight: 600; color: var(–muted); margin-top: 5px; }
+.summary-box { background: var(–blue); border-radius: 10px; padding: 14px 16px; margin: 18px 0; }
 .sum-line { display: flex; justify-content: space-between; font-size: 15px; font-weight: 600; color: rgba(245,240,232,.85); margin-bottom: 5px; }
 .sum-line:last-child { margin-bottom: 0; }
-.sum-line.total { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--cream); border-top: 1px solid rgba(255,255,255,.25); margin-top: 8px; padding-top: 10px; }
-.confirm-btn { width: 100%; background: var(--blue); color: white; border: none; font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; padding: 15px 20px; border-radius: 10px; cursor: pointer; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 8px; transition: background .15s; }
-.confirm-btn:hover { background: var(--blue-dark); }
+.sum-line.total { font-family: ‘Playfair Display’, serif; font-size: 22px; font-weight: 900; color: var(–cream); border-top: 1px solid rgba(255,255,255,.25); margin-top: 8px; padding-top: 10px; }
+.confirm-btn { width: 100%; background: var(–blue); color: white; border: none; font-family: ‘Playfair Display’, serif; font-size: 20px; font-weight: 700; padding: 15px 20px; border-radius: 10px; cursor: pointer; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 8px; transition: background .15s; }
+.confirm-btn:hover { background: var(–blue-dark); }
 .confirm-btn:disabled { background: #aaa; cursor: not-allowed; }
-.cancel-btn { width: 100%; background: none; border: 1.5px solid var(--cream-d); color: var(--muted); font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 700; padding: 12px; border-radius: 10px; cursor: pointer; transition: all .15s; }
-.cancel-btn:hover { border-color: var(--blue); color: var(--blue); }
+.cancel-btn { width: 100%; background: none; border: 1.5px solid var(–cream-d); color: var(–muted); font-family: ‘DM Sans’, sans-serif; font-size: 15px; font-weight: 700; padding: 12px; border-radius: 10px; cursor: pointer; transition: all .15s; }
+.cancel-btn:hover { border-color: var(–blue); color: var(–blue); }
 
 /* ── RECEIPT ── */
 .receipt-overlay { display: none; position: fixed; inset: 0; background: rgba(28,28,28,.88); z-index: 300; align-items: center; justify-content: center; padding: 20px; }
 .receipt-overlay.open { display: flex; }
-.receipt { background: var(--cream); border-radius: 16px; max-width: 420px; width: 100%; overflow: hidden; max-height: 92vh; overflow-y: auto; animation: slideUp .25s ease; }
-.receipt-head { background: var(--blue); padding: 20px 24px 16px; text-align: center; }
-.receipt-head h2 { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; color: var(--cream); }
+.receipt { background: var(–cream); border-radius: 16px; max-width: 420px; width: 100%; overflow: hidden; max-height: 92vh; overflow-y: auto; animation: slideUp .25s ease; }
+.receipt-head { background: var(–blue); padding: 20px 24px 16px; text-align: center; }
+.receipt-head h2 { font-family: ‘Playfair Display’, serif; font-size: 32px; font-weight: 900; color: var(–cream); }
 .receipt-head p  { font-size: 13px; color: rgba(245,240,232,.7); margin-top: 2px; }
 .receipt-body { padding: 20px 24px; }
-.r-lbl { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); margin-top: 14px; margin-bottom: 3px; }
+.r-lbl { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(–muted); margin-top: 14px; margin-bottom: 3px; }
 .r-lbl:first-child { margin-top: 0; }
-.r-val { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--black); }
-.r-val.blue { color: var(--blue); }
-.r-row { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px dashed var(--cream-d); font-size: 14px; font-weight: 600; }
+.r-val { font-family: ‘Playfair Display’, serif; font-size: 22px; font-weight: 700; color: var(–black); }
+.r-val.blue { color: var(–blue); }
+.r-row { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px dashed var(–cream-d); font-size: 14px; font-weight: 600; }
 .r-row:last-child { border-bottom: none; }
-.r-total { background: var(--blue); border-radius: 10px; padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; margin: 16px 0; }
-.r-total span { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; color: var(--cream); }
+.r-total { background: var(–blue); border-radius: 10px; padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; margin: 16px 0; }
+.r-total span { font-family: ‘Playfair Display’, serif; font-size: 24px; font-weight: 900; color: var(–cream); }
 .ticket-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 16px; }
-.chip { background: var(--blue); color: var(--cream); font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; padding: 4px 10px; border-radius: 6px; }
+.chip { background: var(–blue); color: var(–cream); font-family: ‘Playfair Display’, serif; font-size: 14px; font-weight: 700; padding: 4px 10px; border-radius: 6px; }
 .ok-badge { background: #e8f5e9; border: 1.5px solid #4caf50; border-radius: 8px; padding: 10px 14px; font-size: 13px; font-weight: 700; color: #2e7d32; text-align: center; margin-bottom: 14px; }
-.done-btn { width: 100%; background: var(--blue); color: white; border: none; font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; padding: 14px; border-radius: 10px; cursor: pointer; }
-.done-btn:hover { background: var(--blue-dark); }
+.done-btn { width: 100%; background: var(–blue); color: white; border: none; font-family: ‘Playfair Display’, serif; font-size: 18px; font-weight: 700; padding: 14px; border-radius: 10px; cursor: pointer; }
+.done-btn:hover { background: var(–blue-dark); }
 
 /* ── FOOTER ── */
-.footer { background: var(--blue); border-top: 3px solid var(--blue-dark); text-align: center; padding: 14px 20px; position: fixed; bottom: 0; left: 0; right: 0; z-index: 40; }
+.footer { background: var(–blue); border-top: 3px solid var(–blue-dark); text-align: center; padding: 14px 20px; position: fixed; bottom: 0; left: 0; right: 0; z-index: 40; }
 .footer p { font-style: italic; font-size: clamp(13px,3.5vw,16px); color: rgba(245,240,232,.8); letter-spacing: 1px; }
 
 /* ── UTILS ── */
@@ -162,6 +156,7 @@ body { background: var(--cream); font-family: 'DM Sans', sans-serif; min-height:
 @keyframes spin { to { transform: rotate(360deg); } }
 @keyframes slideUp { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 </style>
+
 </head>
 <body>
 
@@ -210,6 +205,7 @@ body { background: var(--cream); font-family: 'DM Sans', sans-serif; min-height:
 <div class="footer"><p>No crumb left uneaten.</p></div>
 
 <!-- CHECKOUT MODAL -->
+
 <div class="overlay" id="checkoutOverlay">
   <div class="modal">
     <div class="modal-handle"></div>
@@ -221,27 +217,31 @@ body { background: var(--cream); font-family: 'DM Sans', sans-serif; min-height:
       <label class="field-lbl">Your Name *</label>
       <input class="m-input" id="buyerName" type="text" placeholder="Full name..." maxlength="50" autocomplete="name">
 
-      <label class="field-lbl">Contact via *</label>
-      <div class="contact-toggle">
-        <button class="tog-btn active" id="togInsta" onclick="setContact('instagram')">📸 Instagram</button>
-        <button class="tog-btn"        id="togWa"    onclick="setContact('whatsapp')">💬 WhatsApp</button>
-      </div>
-      <div class="prefix-wrap" id="prefixWrap">
-        <span class="prefix" id="contactPrefix">@</span>
-        <input class="m-input" id="buyerContact" type="text" placeholder="yourhandle" maxlength="40"
-          autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false">
-      </div>
-      <div class="hint" id="contactHint">We'll DM you if you win 🏆</div>
+```
+  <label class="field-lbl">Contact via *</label>
+  <div class="contact-toggle">
+    <button class="tog-btn active" id="togInsta" onclick="setContact('instagram')">📸 Instagram</button>
+    <button class="tog-btn"        id="togWa"    onclick="setContact('whatsapp')">💬 WhatsApp</button>
+  </div>
+  <div class="prefix-wrap" id="prefixWrap">
+    <span class="prefix" id="contactPrefix">@</span>
+    <input class="m-input" id="buyerContact" type="text" placeholder="yourhandle" maxlength="40"
+      autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false">
+  </div>
+  <div class="hint" id="contactHint">We'll DM you if you win 🏆</div>
 
-      <div class="summary-box" id="modalSummary"></div>
+  <div class="summary-box" id="modalSummary"></div>
 
-      <button class="confirm-btn" id="confirmBtn" onclick="confirmOrder()">Confirm &amp; Pay</button>
-      <button class="cancel-btn" onclick="closeCheckout()">Cancel</button>
-    </div>
+  <button class="confirm-btn" id="confirmBtn" onclick="confirmOrder()">Confirm &amp; Pay</button>
+  <button class="cancel-btn" onclick="closeCheckout()">Cancel</button>
+</div>
+```
+
   </div>
 </div>
 
 <!-- RECEIPT MODAL -->
+
 <div class="receipt-overlay" id="receiptOverlay">
   <div class="receipt">
     <div class="receipt-head"><h2>Your Tickets</h2><p>Good luck! 🤞</p></div>
@@ -249,10 +249,13 @@ body { background: var(--cream); font-family: 'DM Sans', sans-serif; min-height:
   </div>
 </div>
 
-<!-- FIREBASE CONFIG -->
+<!-- ══════════════════════════════════════════════════════════
+     FIREBASE CONFIG  ←  PASTE YOUR CONFIG HERE
+══════════════════════════════════════════════════════════ -->
+
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-storage-compat.js"></script>
 
 <script>
 // ▼▼▼ REPLACE THIS BLOCK WITH YOUR FIREBASE CONFIG ▼▼▼
@@ -267,11 +270,10 @@ const firebaseConfig = {
 };
 // ▲▲▲ END OF CONFIG BLOCK ▲▲▲
 
-const YOCO_PROXY_URL = 'https://yoco-proxy.vercel.app/api/checkout';
+const YOCO_PROXY_URL = 'https://yoco-proxy.vercel.app/api/checkout'; // ← swap when ready
 
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
-const storage = firebase.storage();
 
 // ── State ──
 let prizes       = [];
@@ -304,19 +306,13 @@ async function loadPrizes() {
 }
 
 function renderPrizes() {
-  document.getElementById('prizesList').innerHTML = prizes.map((p, i) => {
-    const hasImage = p.imageUrl && p.imageUrl.trim();
-    const imgHtml = hasImage 
-      ? `<img src="${escH(p.imageUrl)}" alt="${escH(p.name)}" class="prize-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="prize-emoji" style="display:none">${p.emoji || '🎁'}</span>`
-      : `<span class="prize-emoji">${p.emoji || '🎁'}</span>`;
-    
-    return `
+  document.getElementById('prizesList').innerHTML = prizes.map((p, i) => `
     <div class="prize-card" id="card${i}">
-      <div class="prize-img-wrap">${imgHtml}</div>
+      <div class="prize-emoji">${p.emoji || '🎁'}</div>
       <div class="prize-info">
-        <div class="prize-name">${escH(p.name)}</div>
-        <div class="prize-desc">${escH(p.desc || '')}</div>
-        <div class="prize-val">${escH(p.value || '')} · R${p.price}/ticket</div>
+        <div class="prize-name">${p.name}</div>
+        <div class="prize-desc">${p.desc || ''}</div>
+        <div class="prize-val">${p.value || ''} · R${p.price}/ticket</div>
       </div>
       <div class="prize-right">
         <span class="price-tag">R${p.price}</span>
@@ -327,7 +323,7 @@ function renderPrizes() {
         </div>
       </div>
     </div>
-  `;}).join('');
+  `).join('');
 }
 
 function change(i, d) {
@@ -356,7 +352,7 @@ function updateCart() {
       row.className = 'cart-item';
       row.innerHTML = `
         <div>
-          <div class="cart-item-name">${escH(prizes[i].name)}</div>
+          <div class="cart-item-name">${prizes[i].name}</div>
           <div class="cart-item-meta">${q} ticket${q>1?'s':''} × R${prizes[i].price}</div>
         </div>
         <div class="cart-item-price">R${lt}</div>`;
@@ -385,7 +381,7 @@ function openCheckout() {
   qty.forEach((q, i) => {
     if (q > 0) {
       const lt = q * prizes[i].price; total += lt;
-      html += `<div class="sum-line"><span>${escH(prizes[i].name)} ×${q}</span><span>R${lt}</span></div>`;
+      html += `<div class="sum-line"><span>${prizes[i].name} ×${q}</span><span>R${lt}</span></div>`;
     }
   });
   html += `<div class="sum-line total"><span>Total</span><span>R${total}</span></div>`;
@@ -505,15 +501,15 @@ async function checkReturn() {
       });
     } catch(e) { console.warn('Firestore write failed', e); }
 
-    const rows  = items.map(it => `<div class="r-row"><span>${escH(it.name)}</span><span>${it.qty} × R${it.price} = R${it.total}</span></div>`).join('');
+    const rows  = items.map(it => `<div class="r-row"><span>${it.name}</span><span>${it.qty} × R${it.price} = R${it.total}</span></div>`).join('');
     const chips = allTickets.map(n => `<span class="chip">${n}</span>`).join('');
 
     document.getElementById('receiptBody').innerHTML = `
       <div class="ok-badge">✅ Payment confirmed &amp; saved!</div>
       <div class="r-lbl">Buyer</div>
-      <div class="r-val">${escH(name.toUpperCase())}</div>
+      <div class="r-val">${name.toUpperCase()}</div>
       <div class="r-lbl">${contactLabel}</div>
-      <div class="r-val blue">${escH(contactDisplay)}</div>
+      <div class="r-val blue">${contactDisplay}</div>
       <div style="margin-top:14px">${rows}</div>
       <div class="r-total"><span>Total paid</span><span>R${total}</span></div>
       <div class="r-lbl">Your ticket numbers</div>
@@ -532,9 +528,6 @@ function closeReceipt() {
 // ── Close modals on backdrop click ──
 document.getElementById('checkoutOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeCheckout(); });
 document.getElementById('receiptOverlay').addEventListener('click',  e => { if (e.target === e.currentTarget) closeReceipt(); });
-
-// ── Utils ──
-function escH(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
 // ── Init ──
 loadPrizes().then(checkReturn);

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAFFLE – THE LUCKY CRUMB</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue:      #2B4EBF;
+  --blue-dark: #1a3494;
+  --blue-mid:  #3d62d4;
+  --cream:     #F5F0E8;
+  --cream-d:   #EDE8DC;
+  --black:     #1C1C1C;
+  --muted:     #6b6560;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--cream); font-family: 'DM Sans', sans-serif; min-height: 100vh; color: var(--black); }
+
+.header { background: var(--cream); border-bottom: 2px solid var(--blue); padding: 16px 20px; position: sticky; top: 0; z-index: 50; }
+.header-inner { max-width: 700px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.logo-row { display: flex; align-items: center; gap: 12px; }
+.logo-icon { width: 48px; height: 48px; border-radius: 50%; background: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+.logo-name { font-family: 'Playfair Display', serif; font-size: clamp(17px,4vw,22px); font-weight: 900; color: var(--blue); line-height: 1; }
+.logo-sub  { font-size: 11px; font-weight: 700; color: var(--muted); letter-spacing: 2.5px; text-transform: uppercase; margin-top: 2px; }
+.live-badge { background: var(--blue); color: var(--cream); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; white-space: nowrap; }
+
+.hero { background: var(--blue); padding: 40px 24px 34px; text-align: center; position: relative; overflow: hidden; }
+.hero::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.06), transparent 60%); }
+.hero-inner { position: relative; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(52px,14vw,96px); font-weight: 900; color: var(--cream); line-height: 0.88; letter-spacing: -3px; }
+.hero-sub { font-size: clamp(12px,3vw,15px); font-weight: 600; color: rgba(245,240,232,0.6); letter-spacing: 2.5px; text-transform: uppercase; margin-top: 14px; }
+.hero-tag { display: inline-block; margin-top: 16px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: var(--cream); font-style: italic; font-size: 15px; padding: 8px 22px; border-radius: 100px; }
+
+.page { max-width: 700px; margin: 0 auto; padding: 28px 16px 130px; }
+
+.sec-lbl { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; margin-top: 32px; display: flex; align-items: center; gap: 10px; }
+.sec-lbl::after { content:''; flex:1; height:1px; background: var(--blue); opacity:.2; }
+
+.prizes-list { display: flex; flex-direction: column; gap: 10px; }
+.prize-card { background: white; border: 1.5px solid var(--cream-d); border-radius: 12px; padding: 16px 18px; display: flex; align-items: center; gap: 14px; transition: border-color .2s, box-shadow .2s; }
+.prize-card.active { border-color: var(--blue); background: rgba(43,78,191,0.03); box-shadow: 0 2px 16px rgba(43,78,191,0.1); }
+.prize-img-wrap { width: 64px; height: 64px; flex-shrink: 0; border-radius: 8px; overflow: hidden; background: var(--cream-d); display: flex; align-items: center; justify-content: center; }
+.prize-img { width: 100%; height: 100%; object-fit: cover; }
+.prize-emoji { font-size: 32px; }
+.prize-info { flex: 1; min-width: 0; }
+.prize-name  { font-family: 'Playfair Display', serif; font-size: clamp(16px,4vw,20px); font-weight: 700; line-height: 1.1; }
+.prize-desc  { font-size: 13px; color: var(--muted); margin-top: 2px; font-weight: 500; }
+.prize-val   { font-size: 12px; font-weight: 700; color: var(--blue); margin-top: 3px; }
+.prize-right { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; flex-shrink: 0; }
+.price-tag   { font-family: 'Playfair Display', serif; font-size: clamp(18px,4vw,22px); font-weight: 700; color: var(--blue); }
+.qty-ctrl    { display: flex; align-items: center; border: 1.5px solid var(--blue); border-radius: 8px; overflow: hidden; }
+.qty-btn     { background: var(--blue); color: white; border: none; width: 34px; height: 34px; font-size: 18px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .15s; user-select: none; -webkit-tap-highlight-color: transparent; }
+.qty-btn:hover  { background: var(--blue-dark); }
+.qty-btn:active { transform: scale(.93); }
+.qty-num { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; width: 36px; text-align: center; background: white; }
+
+.prizes-loading { text-align: center; padding: 40px; color: var(--muted); font-size: 14px; font-weight: 600; letter-spacing: 1px; }
+
+.cart-wrap { background: white; border: 1.5px solid var(--cream-d); border-radius: 12px; overflow: hidden; margin-top: 12px; }
+.cart-empty { text-align: center; padding: 28px 20px; font-size: 14px; font-weight: 600; color: var(--muted); }
+.cart-item  { display: flex; justify-content: space-between; align-items: center; padding: 13px 18px; border-bottom: 1px solid var(--cream-d); }
+.cart-item:last-of-type { border-bottom: none; }
+.cart-item-name { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; }
+.cart-item-meta { font-size: 12px; font-weight: 600; color: var(--muted); margin-top: 1px; }
+.cart-item-price { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--blue); }
+.cart-total-bar  { background: var(--blue); display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; }
+.cart-total-lbl  { font-size: 13px; font-weight: 700; color: rgba(245,240,232,.8); letter-spacing: 2px; text-transform: uppercase; }
+.cart-total-amt  { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 900; color: var(--cream); }
+.cart-actions { display: flex; gap: 10px; margin-top: 12px; }
+.checkout-btn { flex:1; background: var(--blue); color: white; border: none; font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; padding: 15px 20px; border-radius: 10px; cursor: pointer; transition: background .15s; display: none; }
+.checkout-btn:hover { background: var(--blue-dark); }
+.checkout-btn.show { display: block; }
+.clear-btn { background: none; border: 1.5px solid var(--cream-d); color: var(--muted); font-size: 13px; font-weight: 600; padding: 10px 16px; border-radius: 10px; cursor: pointer; display: none; transition: all .15s; white-space: nowrap; }
+.clear-btn:hover { border-color: var(--blue); color: var(--blue); }
+.clear-btn.show { display: block; }
+
+.overlay { display: none; position: fixed; inset: 0; background: rgba(28,28,28,.75); z-index: 200; align-items: flex-end; justify-content: center; }
+.overlay.open { display: flex; }
+@media(min-width:520px){ .overlay { align-items: center; padding: 20px; } .modal { border-radius: 16px !important; } }
+.modal { background: var(--cream); width: 100%; max-width: 480px; border-radius: 20px 20px 0 0; overflow: hidden; max-height: 95vh; overflow-y: auto; animation: slideUp .25s ease; }
+.modal-handle { width: 40px; height: 4px; background: rgba(43,78,191,.2); border-radius: 2px; margin: 12px auto 0; }
+.modal-head { background: var(--blue); padding: 20px 24px 16px; }
+.modal-head h2 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 900; color: var(--cream); }
+.modal-head p  { font-size: 13px; color: rgba(245,240,232,.7); margin-top: 2px; }
+.modal-body { padding: 20px 24px; }
+.field-lbl { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; margin-top: 18px; display: block; }
+.field-lbl:first-child { margin-top: 0; }
+.m-input { width: 100%; border: 1.5px solid var(--cream-d); background: white; font-family: 'DM Sans', sans-serif; font-size: 17px; font-weight: 600; padding: 11px 14px; border-radius: 10px; color: var(--black); outline: none; transition: border-color .15s, box-shadow .15s; }
+.m-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(43,78,191,.1); }
+.m-input.err { border-color: #e53935; }
+.contact-toggle { display: flex; border: 1.5px solid var(--cream-d); border-radius: 10px; overflow: hidden; background: white; margin-bottom: 8px; }
+.tog-btn { flex:1; background: transparent; color: var(--muted); border: none; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; padding: 10px 8px; cursor: pointer; transition: all .15s; }
+.tog-btn.active { background: var(--blue); color: white; }
+.prefix-wrap { display: flex; align-items: center; border: 1.5px solid var(--cream-d); border-radius: 10px; overflow: hidden; background: white; transition: border-color .15s; }
+.prefix-wrap:focus-within { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(43,78,191,.1); }
+.prefix-wrap.err { border-color: #e53935; }
+.prefix { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--blue); padding: 10px 4px 10px 14px; flex-shrink: 0; }
+.prefix-wrap .m-input { border: none; padding-left: 4px; border-radius: 0; box-shadow: none !important; }
+.hint { font-size: 12px; font-weight: 600; color: var(--muted); margin-top: 5px; }
+.summary-box { background: var(--blue); border-radius: 10px; padding: 14px 16px; margin: 18px 0; }
+.sum-line { display: flex; justify-content: space-between; font-size: 15px; font-weight: 600; color: rgba(245,240,232,.85); margin-bottom: 5px; }
+.sum-line:last-child { margin-bottom: 0; }
+.sum-line.total { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--cream); border-top: 1px solid rgba(255,255,255,.25); margin-top: 8px; padding-top: 10px; }
+.confirm-btn { width: 100%; background: var(--blue); color: white; border: none; font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; padding: 15px 20px; border-radius: 10px; cursor: pointer; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 8px; transition: background .15s; }
+.confirm-btn:hover { background: var(--blue-dark); }
+.confirm-btn:disabled { background: #aaa; cursor: not-allowed; }
+.cancel-btn { width: 100%; background: none; border: 1.5px solid var(--cream-d); color: var(--muted); font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 700; padding: 12px; border-radius: 10px; cursor: pointer; transition: all .15s; }
+.cancel-btn:hover { border-color: var(--blue); color: var(--blue); }
+
+.receipt-overlay { display: none; position: fixed; inset: 0; background: rgba(28,28,28,.88); z-index: 300; align-items: center; justify-content: center; padding: 20px; }
+.receipt-overlay.open { display: flex; }
+.receipt { background: var(--cream); border-radius: 16px; max-width: 420px; width: 100%; overflow: hidden; max-height: 92vh; overflow-y: auto; animation: slideUp .25s ease; }
+.receipt-head { background: var(--blue); padding: 20px 24px 16px; text-align: center; }
+.receipt-head h2 { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; color: var(--cream); }
+.receipt-head p  { font-size: 13px; color: rgba(245,240,232,.7); margin-top: 2px; }
+.receipt-body { padding: 20px 24px; }
+.r-lbl { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); margin-top: 14px; margin-bottom: 3px; }
+.r-lbl:first-child { margin-top: 0; }
+.r-val { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--black); }
+.r-val.blue { color: var(--blue); }
+.r-row { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px dashed var(--cream-d); font-size: 14px; font-weight: 600; }
+.r-row:last-child { border-bottom: none; }
+.r-total { background: var(--blue); border-radius: 10px; padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; margin: 16px 0; }
+.r-total span { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; color: var(--cream); }
+.ticket-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 16px; }
+.chip { background: var(--blue); color: var(--cream); font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; padding: 4px 10px; border-radius: 6px; }
+.ok-badge { background: #e8f5e9; border: 1.5px solid #4caf50; border-radius: 8px; padding: 10px 14px; font-size: 13px; font-weight: 700; color: #2e7d32; text-align: center; margin-bottom: 14px; }
+.done-btn { width: 100%; background: var(--blue); color: white; border: none; font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; padding: 14px; border-radius: 10px; cursor: pointer; }
+.done-btn:hover { background: var(--blue-dark); }
+
+.footer { background: var(--blue); border-top: 3px solid var(--blue-dark); text-align: center; padding: 14px 20px; position: fixed; bottom: 0; left: 0; right: 0; z-index: 40; }
+.footer p { font-style: italic; font-size: clamp(13px,3.5vw,16px); color: rgba(245,240,232,.8); letter-spacing: 1px; }
+
+.spinner { width: 20px; height: 20px; border: 3px solid rgba(255,255,255,.3); border-top-color: white; border-radius: 50%; animation: spin .8s linear infinite; flex-shrink: 0; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes slideUp { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+</style>
+</head>
+<body>
+
+<div class="header"><div class="header-inner">
+  <div class="logo-row">
+    <div class="logo-icon">🍞</div>
+    <div><div class="logo-name">The Lucky Crumb</div><div class="logo-sub">Raffle 2025</div></div>
+  </div>
+  <div class="live-badge">Live Now</div>
+</div></div>
+
+<div class="hero"><div class="hero-inner">
+  <h1>Win Big</h1>
+  <div class="hero-sub">Pick your prizes · Stack your chances</div>
+  <div class="hero-tag">No crumb left uneaten</div>
+</div></div>
+
+<div class="page">
+  <div class="sec-lbl">Prizes</div>
+  <div class="prizes-list" id="prizesList"><div class="prizes-loading">Loading prizes...</div></div>
+
+  <div class="sec-lbl" style="margin-top:28px">Your Cart</div>
+  <div class="cart-wrap">
+    <div class="cart-empty" id="cartEmpty">No tickets selected yet</div>
+    <div id="cartItems"></div>
+    <div class="cart-total-bar" id="cartTotalBar" style="display:none">
+      <span class="cart-total-lbl">Total</span>
+      <span class="cart-total-amt" id="cartTotal">R0</span>
+    </div>
+  </div>
+  <div class="cart-actions">
+    <button class="checkout-btn" id="checkoutBtn" onclick="openCheckout()">Checkout →</button>
+    <button class="clear-btn" id="clearBtn" onclick="clearCart()">Clear all</button>
+  </div>
+</div>
+
+<div class="footer"><p>No crumb left uneaten.</p></div>
+
+<!-- CHECKOUT MODAL -->
+<div class="overlay" id="checkoutOverlay"><div class="modal">
+  <div class="modal-handle"></div>
+  <div class="modal-head"><h2>Checkout</h2><p>Fill in your details to secure your tickets</p></div>
+  <div class="modal-body">
+    <label class="field-lbl">Your Name *</label>
+    <input class="m-input" id="buyerName" type="text" placeholder="Full name..." maxlength="50" autocomplete="name">
+    <label class="field-lbl">Contact via *</label>
+    <div class="contact-toggle">
+      <button class="tog-btn active" id="togInsta" onclick="setContact('instagram')">📸 Instagram</button>
+      <button class="tog-btn"        id="togWa"    onclick="setContact('whatsapp')">💬 WhatsApp</button>
+    </div>
+    <div class="prefix-wrap" id="prefixWrap">
+      <span class="prefix" id="contactPrefix">@</span>
+      <input class="m-input" id="buyerContact" type="text" placeholder="yourhandle" maxlength="40" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false">
+    </div>
+    <div class="hint" id="contactHint">We'll DM you if you win 🏆</div>
+    <div class="summary-box" id="modalSummary"></div>
+    <button class="confirm-btn" id="confirmBtn" onclick="confirmOrder()">Confirm &amp; Pay</button>
+    <button class="cancel-btn" onclick="closeCheckout()">Cancel</button>
+  </div>
+</div></div>
+
+<!-- RECEIPT MODAL -->
+<div class="receipt-overlay" id="receiptOverlay"><div class="receipt">
+  <div class="receipt-head"><h2>Your Tickets</h2><p>Good luck! 🤞</p></div>
+  <div class="receipt-body" id="receiptBody"></div>
+</div></div>
+
+<!-- SUPABASE SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
+<script>
+// ▼▼▼ REPLACE WITH YOUR SUPABASE CONFIG ▼▼▼
+const SUPABASE_URL  = 'https://zdgzsjckmrhoatxusfxx.supabase.co';
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpkZ3pzamNrbXJob2F0eHVzZnh4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc2MTQ4NzMsImV4cCI6MjA5MzE5MDg3M30.Yp_fxep2ca2-tLoY4nlS2p6LLOJsM2oCsdAdGulCbqE';
+// ▲▲▲ END CONFIG ▲▲▲
+
+const YOCO_PROXY_URL = 'https://yoco-proxy.vercel.app/api/checkout';
+
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+
+let prizes = [], qty = [], contactType = 'instagram';
+let ticketBase = parseInt(localStorage.getItem('tlc_tc') || '1000');
+
+const DEFAULT_PRIZES = [
+  { name:"Hotel Stay",   emoji:"🏨", price:100, description:"The Commodore – 1 night & dinner",    value:"Value: over R5 000" },
+  { name:"Golf Sim",     emoji:"⛳", price:50,  description:"Golf simulator – 1 hour + plus one",  value:"Value: R500" },
+  { name:"Sea Land",     emoji:"⚓", price:60,  description:"Sealand duffle bag",                  value:"Value: over R3 500" },
+  { name:"Chaos & Calm", emoji:"🌊", price:30,  description:"Men's clothing voucher",              value:"Value: R1 500" },
+  { name:"BMW",          emoji:"🚗", price:50,  description:"BMW merchandise",                     value:"Value: over R1 500" },
+  { name:"Lindt Choc",   emoji:"🍫", price:30,  description:"Lindt chocolate hamper",              value:"Value: over R1 000" },
+  { name:"Diffuser",     emoji:"🕯️", price:100, description:"Virtue Aroma diffuser & scent set",  value:"Value: over R5 000" },
+  { name:"Cardiologist", emoji:"❤️", price:50,  description:"Cardiologist appointment",            value:"Value: over R7 000" },
+];
+
+async function loadPrizes() {
+  try {
+    const { data, error } = await sb.from('prizes').select('*').order('sort_order');
+    if (error) throw error;
+    prizes = (data && data.length) ? data : DEFAULT_PRIZES;
+  } catch(e) {
+    console.warn('Supabase load failed, using defaults:', e);
+    prizes = DEFAULT_PRIZES;
+  }
+  qty = prizes.map(() => 0);
+  renderPrizes();
+}
+
+function getImageUrl(p) {
+  if (p.image_path) {
+    const { data } = sb.storage.from('prize-images').getPublicUrl(p.image_path);
+    return data?.publicUrl || '';
+  }
+  return p.image_url || '';
+}
+
+function renderPrizes() {
+  document.getElementById('prizesList').innerHTML = prizes.map((p, i) => {
+    const imgUrl = getImageUrl(p);
+    const imgHtml = imgUrl
+      ? `<img src="${escH(imgUrl)}" alt="${escH(p.name)}" class="prize-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="prize-emoji" style="display:none">${p.emoji || '🎁'}</span>`
+      : `<span class="prize-emoji">${p.emoji || '🎁'}</span>`;
+    return `
+    <div class="prize-card" id="card${i}">
+      <div class="prize-img-wrap">${imgHtml}</div>
+      <div class="prize-info">
+        <div class="prize-name">${escH(p.name)}</div>
+        <div class="prize-desc">${escH(p.description || p.desc || '')}</div>
+        <div class="prize-val">${escH(p.value || '')} · R${p.price}/ticket</div>
+      </div>
+      <div class="prize-right">
+        <span class="price-tag">R${p.price}</span>
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="change(${i},-1)">−</button>
+          <span class="qty-num" id="qty${i}">0</span>
+          <button class="qty-btn" onclick="change(${i},1)">+</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function change(i, d) {
+  qty[i] = Math.max(0, qty[i] + d);
+  document.getElementById('qty' + i).textContent = qty[i];
+  document.getElementById('card' + i).classList.toggle('active', qty[i] > 0);
+  updateCart();
+}
+
+function updateCart() {
+  const items = document.getElementById('cartItems');
+  const empty = document.getElementById('cartEmpty');
+  const bar = document.getElementById('cartTotalBar');
+  const totalEl = document.getElementById('cartTotal');
+  const chkBtn = document.getElementById('checkoutBtn');
+  const clrBtn = document.getElementById('clearBtn');
+  items.innerHTML = '';
+  let total = 0, has = false;
+  qty.forEach((q, i) => {
+    if (q > 0) {
+      has = true;
+      const lt = q * prizes[i].price;
+      total += lt;
+      const row = document.createElement('div');
+      row.className = 'cart-item';
+      row.innerHTML = `<div><div class="cart-item-name">${escH(prizes[i].name)}</div><div class="cart-item-meta">${q} ticket${q>1?'s':''} × R${prizes[i].price}</div></div><div class="cart-item-price">R${lt}</div>`;
+      items.appendChild(row);
+    }
+  });
+  empty.style.display = has ? 'none' : 'block';
+  bar.style.display = has ? 'flex' : 'none';
+  totalEl.textContent = 'R' + total;
+  chkBtn.classList.toggle('show', has);
+  clrBtn.classList.toggle('show', has);
+}
+
+function clearCart() {
+  qty.fill(0);
+  qty.forEach((_, i) => { document.getElementById('qty' + i).textContent = '0'; document.getElementById('card' + i).classList.remove('active'); });
+  updateCart();
+}
+
+function openCheckout() {
+  let html = '', total = 0;
+  qty.forEach((q, i) => { if (q > 0) { const lt = q * prizes[i].price; total += lt; html += `<div class="sum-line"><span>${escH(prizes[i].name)} ×${q}</span><span>R${lt}</span></div>`; } });
+  html += `<div class="sum-line total"><span>Total</span><span>R${total}</span></div>`;
+  document.getElementById('modalSummary').innerHTML = html;
+  document.getElementById('buyerName').value = '';
+  document.getElementById('buyerContact').value = '';
+  document.getElementById('buyerName').classList.remove('err');
+  document.getElementById('prefixWrap').classList.remove('err');
+  contactType = 'instagram'; setContact('instagram');
+  document.getElementById('checkoutOverlay').classList.add('open');
+  setTimeout(() => document.getElementById('buyerName').focus(), 150);
+}
+
+function closeCheckout() { document.getElementById('checkoutOverlay').classList.remove('open'); }
+
+function setContact(type) {
+  contactType = type;
+  const isI = type === 'instagram';
+  document.getElementById('togInsta').classList.toggle('active', isI);
+  document.getElementById('togWa').classList.toggle('active', !isI);
+  document.getElementById('contactPrefix').textContent = isI ? '@' : '+';
+  const inp = document.getElementById('buyerContact');
+  inp.placeholder = isI ? 'yourhandle' : '27821234567';
+  inp.setAttribute('inputmode', isI ? 'text' : 'tel');
+  document.getElementById('contactHint').textContent = isI ? "We'll follow you & DM you if you win 🏆" : "We'll WhatsApp you if you win 🏆";
+  document.getElementById('prefixWrap').classList.remove('err');
+  inp.value = ''; inp.focus();
+}
+
+async function confirmOrder() {
+  const nameEl = document.getElementById('buyerName');
+  const contactEl = document.getElementById('buyerContact');
+  const btn = document.getElementById('confirmBtn');
+  const name = nameEl.value.trim();
+  const raw = contactEl.value.trim().replace(/^@+/, '');
+  const isI = contactType === 'instagram';
+  const contactDisplay = isI ? '@' + raw : '+' + raw.replace(/^\+/, '');
+  const contactLabel = isI ? 'INSTAGRAM' : 'WHATSAPP';
+
+  nameEl.classList.remove('err');
+  document.getElementById('prefixWrap').classList.remove('err');
+  let valid = true;
+  if (!name) { nameEl.classList.add('err'); nameEl.focus(); valid = false; }
+  if (!raw) { document.getElementById('prefixWrap').classList.add('err'); if (valid) contactEl.focus(); valid = false; }
+  if (!valid) return;
+
+  let total = 0;
+  const items = [], allTickets = [];
+  qty.forEach((q, i) => {
+    if (q > 0) {
+      const lt = q * prizes[i].price; total += lt;
+      const nums = Array.from({length: q}, () => '#' + (ticketBase++));
+      localStorage.setItem('tlc_tc', ticketBase);
+      allTickets.push(...nums);
+      items.push({ name: prizes[i].name, qty: q, price: prizes[i].price, total: lt, tickets: nums });
+    }
+  });
+
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> Creating payment...';
+
+  try {
+    const res = await fetch(YOCO_PROXY_URL, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ amountInCents: total * 100, description: items.map(it => `${it.name} x${it.qty}`).join(', ') })
+    });
+    const data = await res.json();
+    if (!data.redirectUrl) throw new Error(data.error || 'No redirect URL');
+    localStorage.setItem('tlc_pending', JSON.stringify({ name, contactLabel, contactDisplay, items, allTickets, total, timestamp: new Date().toLocaleString('en-ZA', { timeZone: 'Africa/Johannesburg' }) }));
+    window.location.href = data.redirectUrl;
+  } catch(err) {
+    btn.disabled = false; btn.innerHTML = 'Confirm &amp; Pay';
+    alert('Payment setup failed: ' + err.message);
+  }
+}
+
+async function checkReturn() {
+  const params = new URLSearchParams(window.location.search);
+  const status = params.get('status');
+  const pending = localStorage.getItem('tlc_pending');
+  if (!status || !pending) return;
+  localStorage.removeItem('tlc_pending');
+  window.history.replaceState({}, '', window.location.pathname);
+  const { name, contactLabel, contactDisplay, items, allTickets, total, timestamp } = JSON.parse(pending);
+
+  if (status === 'success') {
+    try {
+      await sb.from('orders').insert({
+        buyer_name: name, contact_label: contactLabel, contact_display: contactDisplay,
+        prizes_summary: items.map(it => `${it.name} ×${it.qty}`).join(' | '),
+        tickets: allTickets.join(', '), total, paid: true, source: 'online'
+      });
+    } catch(e) { console.warn('Supabase write failed', e); }
+
+    const rows = items.map(it => `<div class="r-row"><span>${escH(it.name)}</span><span>${it.qty} × R${it.price} = R${it.total}</span></div>`).join('');
+    const chips = allTickets.map(n => `<span class="chip">${n}</span>`).join('');
+    document.getElementById('receiptBody').innerHTML = `
+      <div class="ok-badge">✅ Payment confirmed &amp; saved!</div>
+      <div class="r-lbl">Buyer</div><div class="r-val">${escH(name.toUpperCase())}</div>
+      <div class="r-lbl">${contactLabel}</div><div class="r-val blue">${escH(contactDisplay)}</div>
+      <div style="margin-top:14px">${rows}</div>
+      <div class="r-total"><span>Total paid</span><span>R${total}</span></div>
+      <div class="r-lbl">Your ticket numbers</div><div class="ticket-chips">${chips}</div>
+      <button class="done-btn" onclick="closeReceipt()">Done – Good luck! 🎉</button>`;
+    document.getElementById('receiptOverlay').classList.add('open');
+  } else { alert('Payment was cancelled. Please try again.'); }
+}
+
+function closeReceipt() { document.getElementById('receiptOverlay').classList.remove('open'); }
+document.getElementById('checkoutOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeCheckout(); });
+document.getElementById('receiptOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeReceipt(); });
+
+function escH(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+loadPrizes().then(checkReturn);
+</script>
+</body>
+</html>
